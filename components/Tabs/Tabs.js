@@ -40,14 +40,16 @@ class Tabs {
       obj[link.dataset.tab] = new TabLink(link);
       return obj;
     }, {});
+    
 
     // Attaches items with data-tab value as property
     this.items = element.querySelectorAll(".Tabs__item");
+    console.log(this.items);
     this.items = Array.from(this.items).reduce((obj, item) => {
       obj[item.dataset.tab] = new TabItem(item);
       return obj;
     }, {});
-
+     console.log(this.items);
     // Listens for a click event in its children or self
     this.element.addEventListener('click', (event) => {
       if (event.tabData) {
